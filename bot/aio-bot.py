@@ -6,7 +6,7 @@ import rooms
 global select_room
 select_room=rooms.all[0]
 logging.basicConfig(level=logging.INFO)
-bot = Bot(token="1445822445:AAGPIA7reTrAxWncto3bXWEUKo9R7UgKo10")
+bot = Bot(token="")
 keyboard = types.ReplyKeyboardMarkup(resize_keyboard=True)
 buttons = ['Выбрать','Состояние','Открыть', 'Закрыть']
 keyboard.add(*buttons)
