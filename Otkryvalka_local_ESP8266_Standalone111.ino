@@ -36,8 +36,7 @@
 
 // You should get Auth Token in the Blynk App.
 // Go to the Project Settings (nut icon).
-char auth[] = "Pgwp0VQRgM_lUN_ai-o3z9YW5c7cRCrK";
-
+char auth[] = "h9pbfxfFXBsjEflpfLaB1FrQw1wjbOIz";
 // Your WiFi credentials.
 // Set password to "" for open networks.
 const int BUTTON = 4;     // номер входа, подключенный к кнопке
@@ -48,9 +47,13 @@ const int RELE = 2;
 int rele = 0;
 int engon = 1;
 int buttonState = 0;         // переменная для хранения состояния кнопки
-char ssid[] = "OnePlus 8 Pro";
-char pass[] = "fb85954e4b1b";
-IPAddress ipown  (192,168,178,103);
+//char ssid[] = "OnePlus 8 Pro";
+//char pass[] = "fb85954e4b1b";
+//IPAddress ipown  (192,168,178,103);
+//char ssid[] = "wifi_home";
+char ssid[] = "MikroTik-housekeep";
+char pass[] = "bumb0r1k";
+IPAddress ipown  (192,168,1,60);
 BlynkTimer timer;
 BlynkTimer timer2;
 // This function tells Arduino what to do if there is a Widget
