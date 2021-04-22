@@ -56,6 +56,7 @@ char pass[] = "bumb0r1k";
 IPAddress ipown  (192,168,1,60);
 BlynkTimer timer;
 BlynkTimer timer2;
+BlynkTimer timer3;
 // This function tells Arduino what to do if there is a Widget
 // which is requesting data for Virtual Pin (5)
 BLYNK_WRITE(V8)
@@ -92,9 +93,17 @@ void myTimerEvent2()
   // если нажата, то buttonState будет HIGH:
   buttonState=!buttonState;
   digitalWrite(LED, buttonState); 
-  Blynk.virtualWrite(V10, buttonState);
+  Blynk.virtualWrite(V1, buttonState);
  }
-
+void myTimerEvent3()
+{
+  // Блокировка замка через 10 минут 
+  //You can send any value at any time.
+  // Please don't send more that 10 values per second.
+    Blynk.virtualWrite(V9, 1);
+    Blynk.virtualWrite(V0, 0);
+    digitalWrite(BLOCK, engon);
+ }
 
 
 
@@ -114,6 +123,7 @@ void setup()
   Blynk.begin(auth, ssid, pass, ipown, 8080);
   timer.setInterval(3000L, myTimerEvent);
   timer2.setInterval(1000L, myTimerEvent2);
+  timer3.setInterval(600000L, myTimerEvent3);
 }
 
 void loop()
@@ -121,4 +131,5 @@ void loop()
   Blynk.run();
   timer.run(); // Initiates BlynkTimer
   timer2.run(); // Initiates BlynkTimer
+  timer3.run(); // Initiates BlynkTimer
 }
