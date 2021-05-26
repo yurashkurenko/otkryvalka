@@ -25,3 +25,10 @@ userroom=[['@yurasof1t1972','admin','13o1','1o2','1o3','2o1','2o2','2o3','2o4','
 ['sultanice','user','13o1','1o2','1o3','3o2','3o3','3o4','4o1','4o2','4o3'],
 ['Btctrader','user','13o1','1o2','1o3','3o2','3o3','3o4','4o1','4o2','4o3']]
 pdata.write(userroom,'userroom')
+userboxes=[['@yurasof1t1972','admin','13o1','1o2','1o3','2o1','2o2','2o3','2o4','3o1','3o2','3o3','3o4','4o1','4o2','4o3'],
+['Adigeysha','user','13o1','1o2','1o3','2o1','2o2','2o4','3o1','3o2','3o3','3o4','4o1','4o2','4o3'],
+['yurasoft19721','user','1o2','1o3','2o1','2o2','2o3','2o4','3o1'],
+['yurasoft1972','user','1o2'],
+['sultanice','user','13o1','1o2','1o3','3o2','3o3','3o4','4o1','4o2','4o3'],
+['Btctrader','user','13o1','1o2','1o3','3o2','3o3','3o4','4o1','4o2','4o3']]
+pdata.write(userboxes,'userboxes')
