@@ -12,6 +12,7 @@ def append(user,box):
         if userboxes[i][0]==user:
            userboxes[i].append(box) 
     print(userboxes)
+    pdata.write(userboxes,'userboxes')
     return 
 
 def remove(user,box):
@@ -23,16 +24,18 @@ def remove(user,box):
             if userboxes[i].count(box)>0:
                 userboxes[i].remove(box)
     print(userboxes)
+    pdata.write(userboxes,'userboxes')
     return 
 
 def removeuser(user):
     userboxes = []
     userboxes=pdata.read(userboxes,'userboxes')
     print(userboxes)
-    for i in range(len(userboxes)):
-        if userboxes[i][0]==user:
-            userboxes.remove([user])
+    todelete=[user]
+    if userboxes.count(todelete)>0:
+        userboxes.remove(todelete)
     print(userboxes)
+    pdata.write(userboxes,'userboxes')
     return
 #    users.remove(x)
 #    return datap
