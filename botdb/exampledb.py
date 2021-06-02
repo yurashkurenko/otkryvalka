@@ -72,4 +72,12 @@ import db
 # 1.1
 # 11
 # 123
+#© 2021 GitHub, Inc.
 
+# list юзеров
+#ml=[]
+#ml=db.fetchall('menulevel',['ml'])
+#print(list(ml[0].values())[0])
+db.updateml("Здравствуйте! Я Ваша тетя.")
+#ml=[]
+#ml=db.fetchall('menulevel',['ml'])

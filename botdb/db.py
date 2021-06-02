@@ -32,6 +32,10 @@ def fetchall(table: str, columns: List[str]) -> List[Tuple]:
         result.append(dict_row)
     return result
 
+def fetchcelltext(table: str, column: str, row: int) -> str:
+    cursor.execute(f"SELECT {column} FROM {table} where id={row}")
+    result = cursor.fetchone()
+    return result
 
 def delete(table: str, row_id: int) -> None:
     row_id = int(row_id)
@@ -60,4 +64,13 @@ def check_db_exists():
         return
     _init_db()
 
+def updateml(menulevelstr: str) -> None:
+#    print(menulevelstr)
+    sqlline=f"update menulevel set ml = '{menulevelstr}' where id = 1"
+#    print(sqlline)
+    cursor.execute(sqlline)
+    conn.commit()
 check_db_exists()
+
+
+#"""Update sqlitedb_developers set salary = 10000 where id = 4"""
