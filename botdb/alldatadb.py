@@ -20,17 +20,24 @@ def inputtext(text):
     return text
     
 def buttonlist(state):
-    buttontupple=db.fetchcelltext('botstate','keyboard',state)
-    print(buttontupple)
+    buttontoople=db.fetchcelltext('botstate','keyboard',state)
+    buttonstring=buttontoople[0]
     buttonlist=[]
-    buttonliststr=buttontupple[0]
-    buttonlist=buttonliststr.split(' ')
-    print(buttonlist)
+    buttonlist=buttonstring.split(' ')
     return buttonlist
     
 def message(state):
-    messagetupple=db.fetchcelltext('botstate','message',state)
-    print(messagetupple)
-    messagestr=messagetupple[0]
-    print(messagestr)
-    return messagestr
+    messagetoople=db.fetchcelltext('botstate','message',state)
+    messagestring=messagetoople[0]
+    return messagestring 
+
+def command(state):
+    commandtoople1=db.fetchcelltext('botstate','level1',state)
+    commandtoople2=db.fetchcelltext('botstate','level2',state)
+    commandstring=commandtoople1[0]+' '+commandtoople2[0]
+    return commandstring
+def commandlv1(state):
+    commandtoople1=db.fetchcelltext('botstate','level1',state)
+    commandtoople2=db.fetchcelltext('botstate','level2',state)
+    commandstring=commandtoople1[0]+' '+commandtoople2[0]
+    return commandstring
