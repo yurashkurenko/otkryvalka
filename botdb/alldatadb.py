@@ -1,4 +1,5 @@
 import db
+levelbuffer=[]
 
 def userlist():
     userlist1=''
@@ -36,8 +37,13 @@ def command(state):
     commandtoople2=db.fetchcelltext('botstate','level2',state)
     commandstring=commandtoople1[0]+' '+commandtoople2[0]
     return commandstring
+    
 def commandlv1(state):
     commandtoople1=db.fetchcelltext('botstate','level1',state)
+    commandstring=commandtoople1[0]
+    return commandstring
+    
+def commandlv2(state):
     commandtoople2=db.fetchcelltext('botstate','level2',state)
-    commandstring=commandtoople1[0]+' '+commandtoople2[0]
+    commandstring=commandtoople2[0]
     return commandstring

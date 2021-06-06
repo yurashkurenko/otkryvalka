@@ -27,7 +27,7 @@ async def cmd_start(message: types.Message):
     print(state)
     print(message.chat)
     command=' пользователи'
-       
+    alldatadb.levelbuffer.append(state)   
 #    await message.answer("Действие отменено", reply_markup=types.ReplyKeyboardRemove())
     if (message.text.lower() == '/start') or (message.text.lower() == '/help'):
         checkmessage='Добро пожаловать!'
@@ -39,24 +39,20 @@ async def cmd_start(message: types.Message):
         alldatadb.menulevel(10)
         await message.answer(checkmessage, reply_markup=types.ReplyKeyboardRemove())
         await message.answer(helpmessage, reply_markup=types.ReplyKeyboardRemove())
-#        S.find(str, [start],[end])	Поиск подстроки в строке. Возвращает номер первого вхождения или -1
-    elif message.text.lower().find(' пользователи'):
-        alldatadb.menulevel(1)
-        print(command)
-        print(state)
-        checkmessage='Работа с ' + alldatadb.message(state)
-        checkmessage1 = alldatadb.message(state)
-        await message.answer(checkmessage, reply_markup=types.ReplyKeyboardRemove())
-        await message.answer(checkmessage1, reply_markup=keyboard)
-    elif message.text.lower().find(' назад'):
-        alldatadb.menulevel(10)
-        print(command)
-        print(state)
-        checkmessage='Работа с ' + alldatadb.message(state)
-        checkmessage1 = alldatadb.message(state)
-        await message.answer(checkmessage, reply_markup=types.ReplyKeyboardRemove())
-        await message.answer(checkmessage1, reply_markup=keyboard)
-        
+    levelstate=[1,2,3,4,5,6,7,8,9,10]
+    for i in range(len(levelstate)):
+        messagetocompare=alldatadb.commandlv1(levelstate[i])
+        messagestring=message.text[0:5]
+        if messagestring in messagetocompare:
+            alldatadb.menulevel(i)
+            print(message.text)
+            print(messagetocompare)
+            print(state)
+            checkmessage='Работа с ' + alldatadb.message(state)
+            checkmessage1 = alldatadb.message(state)
+            await message.answer(checkmessage, reply_markup=types.ReplyKeyboardRemove())
+            await message.answer(checkmessage1, reply_markup=keyboard)           
+
         
 if __name__ == "__main__":
     executor.start_polling(dp, skip_updates=True)

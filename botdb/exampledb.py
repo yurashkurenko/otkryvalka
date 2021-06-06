@@ -1,4 +1,25 @@
 import db
+import alldatadb
+# print(alldatadb.commandlv1(1))
+# print(alldatadb.commandlv1(1)[0:4])
+i = 5
+while i < 15:
+    messagetocompare=alldatadb.commandlv1(1)
+    print(messagetocompare)
+    message=''
+    # print(message)
+    message=input('Строка для сравнения:')
+    print(message)
+    #if message.rfind(messagetocompare):
+
+    if message in messagetocompare:
+        print('строка входит')
+    else:
+        print('строка не входит')
+# if "dff" in "sdfssf sddff svvsef xbsdf sdfwwe":
+    # print u"Входит!"
+
+
 # rows={}
 # rows= {'user': 'yurasoft1'}
 # table='users'
@@ -78,6 +99,6 @@ import db
 #ml=[]
 #ml=db.fetchall('menulevel',['ml'])
 #print(list(ml[0].values())[0])
-db.updateml("Здравствуйте! Я Ваша тетя.")
+#db.updateml("Здравствуйте! Я Ваша тетя.")
 #ml=[]
 #ml=db.fetchall('menulevel',['ml'])
