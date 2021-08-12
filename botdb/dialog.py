@@ -7,13 +7,28 @@ def question():
     print('ответ')
     
 def dialog(text):
-    dialog="Принято"
+#    dialog=[]
+#    dialog.append(text+" Ок")
+#    dialog.append("['Клавиатура']")
+#    dialog.append('команда')
     messagelist=airdata.getairdata()
+    # dialog=[]
+    # dialog.append(text+messagelist[0][1])
+    # dialog.append(messagelist[0][2])
+    # dialog.append(messagelist[0][3])
     for i in range(len(messagelist)):
         #print(messagelist[i][0],messagelist[i][1])
+        if i==0:
+            dialog=[]
+            dialog.append(text+messagelist[0][1])
+            dialog.append(messagelist[0][2])
+            dialog.append(messagelist[0][3])
         if text==messagelist[i][0]:
-            dialog=messagelist[i][1]
-    print(text,dialog)
+            dialog=[]
+            dialog.append(messagelist[i][1])
+            dialog.append(messagelist[i][2])
+            dialog.append(messagelist[i][3])
+            print(text,dialog)
     return dialog
     
 # def dialog1(text):
